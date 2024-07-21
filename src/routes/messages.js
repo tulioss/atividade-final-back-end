@@ -92,7 +92,7 @@ router.delete('/message/:id', (req, res) => {
 
         const[messageDel] = messages.splice(messageIndex, 1)
 
-        res.status(200).json({message: 'Mensagem apagada com sucesso', message: messageDel})
+        res.status(200).json({message: 'Mensagem apagada com sucesso'})
 
     }catch {
         res.status(500).json({message: 'Erro ao deletar a mensagem.'})
