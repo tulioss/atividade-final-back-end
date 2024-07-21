@@ -6,7 +6,7 @@ import {validationNameEmailPassword, validationEmailPassword} from '../middlewar
 
 const router = express.Router()
 
-const users = []
+ export const users = []
 
 router.post('/signup', validationNameEmailPassword, async(req, res) => {
     try {

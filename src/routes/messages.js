@@ -1,6 +1,6 @@
 import express from 'express'
 import {v4 as uuidv4} from 'uuid'
-import users from './users' 
+import {users} from '../routes/users' 
 
 import {validationTitleDescription, updateValidation} from '../middlewares/validationsMessages'
 
@@ -71,7 +71,9 @@ router.put("/message/:id", updateValidation, (req, res) => {
             messages[idMessage].description = description
         }
 
-        res.status(200).json({message: `Mensagem atualizada com sucesso`, message: messages[idMessage]})
+        const messageUp = messages[idMessage]
+
+        res.status(200).json({message: 'Mensagem atualizada com sucesso', messageUp: messageUp})
 
     }catch {
         res.status(500).json({message: 'Erro ao atualizar mensagem.'})
